@@ -1,11 +1,4 @@
 const btnDark = document.querySelector('.dark-mode-btn');
-const btnProject = document.querySelector(".btn");
-
-btnProject.onclick = function () {
-    document.querySelector('.section').scrollIntoView({ behavior: 'smooth' });
-}
-
-
 
 
 if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
@@ -45,4 +38,13 @@ btnDark.onclick = function () {
     }
 }
 
+const btnProject = document.querySelector(".btn");
 
+btnProject.addEventListener('click', function(event) {
+    event.preventDefault();
+    const elem = document.querySelector("#main");
+    window.scroll({
+        top:elem.offsetTop,
+        behavior: "smooth"
+    });
+});
